@@ -5,10 +5,10 @@
 replicaCount: 2
 
 image:
-  repository: 
+  repository: shubhranshu19/app
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: 1.1
+  tag: 1.0.1
+  pullSecrets: api-secret
   
   
 database:
@@ -18,7 +18,7 @@ database:
   port: 3306
   dbname: api-db
 
-pullPolicy: IfNotPresent
+
 pullSecrets: api-secret
 
 nameOverride: ""
@@ -47,8 +47,8 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
-  port: 80
+  type: NodePort
+  port: 8080
 
 ingress:
   enabled: false
