@@ -12,8 +12,8 @@ image:
   
   
 database:
-  username: admin
-  password: admin@12345
+  username: YWRtaW4=
+  password: YWRtaW5AMTIzNDU=
   host: "10.10.10.2"
   port: 3306
   dbname: api-db
