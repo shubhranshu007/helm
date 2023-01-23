@@ -108,18 +108,18 @@ auth:
   ## @param auth.rootPassword Password for the `root` user. Ignored if existing secret is provided.
   ## ref: https://github.com/bitnami/containers/tree/main/bitnami/mariadb#setting-the-root-password-on-first-run
   ##
-  rootPassword: ""
+  rootPassword: "admin@123"
   ## @param auth.database Name for a custom database to create
   ## ref: https://github.com/bitnami/containers/blob/main/bitnami/mariadb/README.md#creating-a-database-on-first-run
   ##
-  database: my_database
+  database: api_database
   ## @param auth.username Name for a custom user to create
   ## ref: https://github.com/bitnami/containers/blob/main/bitnami/mariadb/README.md#creating-a-database-user-on-first-run
   ##
-  username: ""
+  username: "apiuser"
   ## @param auth.password Password for the new user. Ignored if existing secret is provided
   ##
-  password: ""
+  password: "apiuser@2023"
   ## @param auth.replicationUser MariaDB replication user
   ## ref: https://github.com/bitnami/containers/tree/main/bitnami/mariadb#setting-up-a-replication-cluster
   ##
@@ -330,17 +330,17 @@ primary:
   ##
   resources:
     ## Example:
-    ## limits:
-    ##    cpu: 100m
-    ##    memory: 256Mi
+    limits:
+      cpu: 300m
+      memory: 500Mi
     ##
-    limits: {}
+  ##  limits: {}
     ## Examples:
-    ## requests:
-    ##    cpu: 100m
-    ##    memory: 256Mi
+    requests:
+      cpu: 150m
+      memory: 256Mi
     ##
-    requests: {}
+    ##  requests: {}
   ## Configure extra options for MariaDB primary containers' liveness, readiness and startup probes
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes)
   ## @param primary.startupProbe.enabled Enable startupProbe
@@ -457,7 +457,7 @@ primary:
       - ReadWriteOnce
     ## @param primary.persistence.size MariaDB primary persistent volume size
     ##
-    size: 8Gi
+    size: 20Gi
     ## @param primary.persistence.selector Selector to match an existing Persistent Volume
     ## selector:
     ##   matchLabels:
@@ -719,17 +719,17 @@ secondary:
   ##
   resources:
     ## Example:
-    ## limits:
-    ##    cpu: 100m
-    ##    memory: 256Mi
+    limits:
+      cpu: 300m
+      memory: 500Mi
     ##
-    limits: {}
+    ## limits: {}
     ## Examples:
-    ## requests:
-    ##    cpu: 100m
-    ##    memory: 256Mi
+    requests:
+      cpu: 150m
+      memory: 256Mi
     ##
-    requests: {}
+   ## requests: {}
   ## Configure extra options for MariaDB Secondary containers' liveness, readiness and startup probes
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#configure-probes)
   ## @param secondary.startupProbe.enabled Enable startupProbe
