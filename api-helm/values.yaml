@@ -19,7 +19,7 @@ database:
   dbname: api-db
 
 pullPolicy: IfNotPresent
-pullSecrets: []
+pullSecrets: api-secret
 
 nameOverride: ""
 fullnameOverride: ""
