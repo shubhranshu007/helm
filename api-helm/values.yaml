@@ -12,8 +12,8 @@ image:
   
   
 database:
-  username: YWRtaW4=
-  password: YWRtaW5AMTIzNDU=
+  username: YXBpdXNlcg==
+  password: YXBpdXNlckAyMDIz
   host: "10.10.10.2"
   port: 3306
   dbname: api-db
